@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+    direction: rtl;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(135deg, #0f172a, #1e293b, #E195AB);
+
+    overflow-x: hidden;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: -50px;
+}
+
+.logo img {
+    width: 100px;   /* اندازه لوگو */
+    height: auto;
+}
+
+.contact-page {
+    width: 100%;
+    padding: 40px;
+}
+
+.contact-box {
+    max-width: 1150px;
+    margin: auto;
+
+    display: flex;
+
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .1);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, .3);
+
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* فرم */
+
+.left {
+    flex: 2;
+    padding: 60px;
+    background: rgba(255, 255, 255, .95);
+}
+
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
+
+.subtitle {
+    color: #64748b;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    color: #94a3b8;
+}
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 18px 55px 18px 20px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 18px;
+
+    background: #f1f5f9;
+
+    font-size: 15px;
+
+    transition: .4s;
+}
+
+input:focus,
+textarea:focus {
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, .15);
+}
+
+textarea {
+    height: 170px;
+    resize: none;
+}
+
+button {
+
+    border: none;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 16px;
+
+    background: linear-gradient(90deg, #2563eb, #4f46e5);
+
+    transition: .4s;
+}
+
+button:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, .4);
+}
+
+/* سمت اطلاعات */
+
+.right {
+
+    flex: 1;
+
+    position: relative;
+
+    padding: 60px;
+
+    background: linear-gradient(180deg, #0f172a, #111827);
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.right h2 {
+    margin-bottom: 40px;
+    font-size: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-item {
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.contact-item i {
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #60a5fa;
+}
+
+/* دایره‌های بک گراند */
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .05);
+
+    animation: float 6s infinite ease-in-out;
+}
+
+.one {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    left: -40px;
+}
+
+.two {
+    width: 250px;
+    height: 250px;
+    bottom: -80px;
+    right: -80px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* موبایل */
+
+@media(max-width:900px) {
+
+    .contact-box {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        padding: 35px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+}
+
+#successMessage {
+
+    margin-top: 20px;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    animation: fadeUp .4s ease;
+}
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, .8);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 14px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .4s ease;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    border-right: 4px solid #22c55e;
+}
+
+.toast.error {
+    border-right: 4px solid #ef4444;
+}
