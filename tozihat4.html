@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>صفحه محصول</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #f7f8fa, #eef3f7);
+            overflow-x: hidden;
+            color: #222;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        /* HERO */
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 80px;
+            min-height: 90vh;
+        }
+
+        /* PRODUCT IMAGE */
+
+        .product-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    rgba(0, 255, 220, .25),
+                    transparent 70%);
+            filter: blur(60px);
+        }
+
+        .product-image img {
+            max-height: 650px;
+            width: auto;
+            position: relative;
+            z-index: 2;
+            animation: float 5s ease-in-out infinite;
+            transition: .5s;
+            border-radius: 50px;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes float {
+
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+
+        /* INFO */
+
+        .product-info {
+            animation: fadeIn 1s ease;
+        }
+
+        .brand {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fff;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .product-title {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .rating {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #ffb400;
+        }
+
+        .desc {
+            line-height: 2.2;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+
+        .feature {
+            background: white;
+            padding: 18px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
+            transition: .3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-price {
+            margin-top: 10px;
+        }
+
+        .new-price {
+            color: #e91e63;
+            font-weight: 700;
+            font-size: 25px;
+            margin-left: 8px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+
+        .buy-box {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .buy-btn {
+            padding: 18px 40px;
+            border: none;
+            border-radius: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            color: white;
+            background: linear-gradient(135deg,
+                    #9AA6B2,
+                    #1e3a5f);
+            transition: .4s;
+        }
+
+        .buy-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(40, 12, 255, 0.3);
+        }
+
+        .wishlist {
+            padding: 18px 25px;
+            border: none;
+            background: white;
+            border-radius: 18px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+        }
+
+        /* DETAILS */
+
+        .details {
+            margin-top: 120px;
+            background: rgba(255, 255, 255, .75);
+            backdrop-filter: blur(20px);
+            padding: 60px;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, .07);
+        }
+
+        .details h2 {
+            font-size: 34px;
+            margin-bottom: 25px;
+        }
+
+        .details p {
+            line-height: 2.4;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            background: linear-gradient(135deg,
+                    #ffd5f5,
+                    #ff51e5);
+            padding: 35px;
+            border-radius: 25px;
+            color: white;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+
+        }
+
+        @media(max-width:992px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-title {
+                font-size: 34px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image img {
+                max-height: 450px;
+            }
+
+        }
+
+        .toast {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 16px 25px;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+            z-index: 9999;
+
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all .4s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <section class="hero">
+
+            <div class="product-image">
+
+                <div class="glow"></div>
+
+                <img src="image/rem1.png" alt="محصول">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="brand">
+                    Dora
+                </div>
+
+                <h1 class="product-title">
+                    ریمل حجم‌دهنده و بلندکننده دورا
+                </h1>
+
+                <div class="rating">
+                    ★★★★★ 4.9 (430 نظر)
+                </div>
+
+                <p class="desc">
+                    ریمل حجم‌دهنده و بلندکننده دورا مدل Big با فرچه فیبری صاف، ماندگاری 8 ساعته، ضدآب و ضد حساسیت، مناسب
+                    مژه‌های کوتاه و کم‌پشت برای استفاده روزانه
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">✓ بدون چسبندگی و ریزش</div>
+
+                    <div class="feature">✓ رنگ مشکی عمیق</div>
+
+                    <div class="feature">✓ حجم دهنده و بلند کننده مژه</div>
+
+                    <div class="feature">✓ بافت سبک و ماندگاری بالا</div>
+
+                </div>
+
+                <div class="product-price">
+                    <span class="new-price">880,300 تومان</span></br>
+                    <span class="old-price">1,120,00 تومان</span>
+                </div>
+
+                <div class="buy-box">
+
+                    <button class="buy-btn">
+                        افزودن به سبد خرید
+                    </button>
+
+                    <button class="wishlist">
+                        ♡ علاقه‌مندی‌ها
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="details">
+
+            <h2>
+                درباره محصول
+            </h2>
+
+            <p>
+                ریمل حجم‌دهنده دورا مدل Big با فرمولاسیونی تخصصی، گزینه‌ای مناسب برای افزایش حجم، ضخامت و جلوه مژه‌ها به
+                شمار می‌رود. این ریمل با بافتی سبک طراحی شده و امکان استفاده روزمره را بدون ایجاد احساس سنگینی فراهم
+                می‌کند. فرچه حرفه‌ای از جنس فیبر، مژه‌ها را به‌خوبی از یکدیگر تفکیک کرده و ضمن حجم‌دهی، به بلندتر دیده
+                شدن آن‌ها کمک می‌کند. استفاده از رنگدانه‌های غلیظ مشکی، جلوه‌ای مخملی و عمیق روی مژه‌ها ایجاد کرده و
+                زیبایی چشم‌ها را دوچندان می‌کند.
+            </p>
+
+            <div class="stats">
+
+                <!--<div class="stat">
+<h3>95%</h3>
+<span>کاهش چربی پوست</span>
+</div>-->
+
+                <div class="stat">
+                    <h3>12K+</h3>
+                    <span>مشتری راضی</span>
+                </div>
+
+                <div class="stat">
+                    <h3>4.9★</h3>
+                    <span>امتیاز کاربران</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+    <script>
+        document.querySelector(".buy-btn").addEventListener("click", function () {
+
+            // گرفتن محصولات قبلی
+            let saved = JSON.parse(localStorage.getItem("savedProducts")) || [];
+
+            // محصول فعلی
+            const product = {
+                title: document.querySelector(".product-title").innerText,
+                price: document.querySelector(".new-price").innerText,
+                image: document.querySelector(".product-image img").src
+            };
+
+            // ذخیره
+            saved.push(product);
+            localStorage.setItem("savedProducts", JSON.stringify(saved));
+
+            // ساخت پیام
+            const toast = document.createElement("div");
+            toast.innerText = "✓ محصول ذخیره شد";
+            toast.classList.add("toast");
+
+            document.body.appendChild(toast);
+
+            // نمایش پیام (خیلی مهم)
+            setTimeout(() => {
+                toast.classList.add("show");
+            }, 10);
+
+            // حذف پیام
+            setTimeout(() => {
+                toast.classList.remove("show");
+
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+
+            }, 2500);
+
+
+        });
+    </script>
+</body>
+
+</html>

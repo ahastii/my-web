@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود و ثبت‌نام</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+
+    <!-- دایره‌های نورانی -->
+    <div class="blur-circle circle1"></div>
+    <div class="blur-circle circle2"></div>
+
+    <div class="container">
+
+        <div class="logo">
+            <img src="image/icon2.png" alt="بیوتی شاپ">
+        </div>
+
+        <!-- تب‌ها -->
+        <div class="tabs">
+            <div class="tab active" data-tab="login">
+                ورود
+            </div>
+
+            <div class="tab" data-tab="signup">
+                ثبت‌نام
+            </div>
+        </div>
+
+
+        <!-- فرم ورود -->
+        <div id="login-form" class="form-section active-tab-content">
+
+            <div class="form-group">
+                <i class="fa-regular fa-user icon"></i>
+                <input type="text" id="login-email" placeholder=" ">
+                <label>شماره موبایل یا ایمیل</label>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" id="login-password" placeholder=" ">
+                <label>رمز عبور</label>
+            </div>
+            <button class="submit-button" id="loginBtn" type="button">
+                ورود
+            </button>
+
+            <div class="forgot">
+                <a href="#">فراموشی رمز عبور؟</a>
+            </div>
+
+        </div>
+
+
+        <!-- فرم ثبت نام -->
+        <div id="signup-form" class="form-section">
+
+            <div class="form-group">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input type="text" id="signup-email" placeholder=" ">
+                <label>شماره موبایل یا ایمیل</label>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-regular fa-user icon"></i>
+                <input type="text" id="fullname" placeholder=" ">
+                <label>نام و نام خانوادگی</label>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" id="signup-password" placeholder=" ">
+                <label>رمز عبور</label>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-shield-halved icon"></i>
+                <input type="password" id="repeat-password" placeholder=" ">
+                <label>تکرار رمز عبور</label>
+            </div>
+
+            <button class="submit-button" id="signupBtn" type="button">
+                ثبت‌نام
+            </button>
+        </div>
+
+
+        <div class="terms">
+            با ورود یا ثبت‌نام، شما با
+            <a href="#">شرایط استفاده</a>
+            و
+            <a href="#">حریم خصوصی</a>
+            موافق هستید.
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <div id="toast" class="toast"></div>
+
+</body>
+
+</html>

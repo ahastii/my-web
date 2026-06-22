@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>فروشگاه محصولات</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff4d8d;
+            --secondary: #7c3aed;
+            --dark: #111827;
+            --light: #ffffff;
+            --radius: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background:
+                linear-gradient(180deg,
+                    #f8f9ff,
+                    #eef2ff);
+            min-height: 100vh;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        /* Toolbar */
+
+        .product-toolbar {
+
+            position: sticky;
+            top: 15px;
+
+            width: fit-content;
+
+            margin: 25px auto;
+
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            padding: 14px 25px;
+
+            background: rgba(255, 255, 255, .7);
+
+            backdrop-filter: blur(20px);
+
+            border-radius: 60px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, .08);
+
+            z-index: 999;
+
+            animation: fadeDown .7s;
+        }
+
+        @keyframes fadeDown {
+
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .sort-btn {
+
+            border: none;
+            padding: 10px 18px;
+
+            background: transparent;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .sort-btn:hover {
+            background: #ffffff;
+        }
+
+        .sort-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Grid */
+
+        .products-grid {
+            width: 95%;
+            margin: auto;
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px 0 60px;
+        }
+
+        /* Card */
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, .08);
+            transition: .5s;
+            animation: show .7s ease;
+        }
+
+        @keyframes show {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .product-card:hover {
+
+            transform:
+                translateY(-12px);
+
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, .15);
+        }
+
+
+
+        /* Discount */
+
+        .discount-badge {
+
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            color: white;
+
+            background:
+                linear-gradient(135deg,
+                    #ff4d8d,
+                    #ff0080);
+
+            box-shadow:
+                0 8px 20px rgba(255, 77, 141, .4);
+
+            z-index: 10;
+        }
+
+        /* Image */
+
+        .product-image {
+
+            height: 260px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .product-image img {
+
+            width: 80%;
+
+            transition: .6s;
+        }
+
+        .product-card:hover .product-image img {
+
+            transform: scale(1.05);
+        }
+
+        /* Actions */
+
+        .image-actions {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: 0.3s ease;
+        }
+
+        /* ظاهر شدن هنگام هاور */
+        .product-card:hover .image-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* دکمه‌های آیکنی کوچک */
+        .view-btn {
+            width: 36px;
+            min-width: 36px;
+            height: 36px;
+
+            border-radius: 30px;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 0 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+            transition: all .3s ease;
+        }
+
+        .view-btn span {
+            max-width: 0;
+            opacity: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .view-btn:hover {
+            width: 120px;
+        }
+
+        .view-btn:hover span {
+            max-width: 100px;
+            opacity: 1;
+        }
+
+        .view-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: #9C27B0;
+            transition: 0.3s;
+        }
+
+        .view-btn:hover svg {
+            fill: #fff;
+        }
+
+        /* هاور */
+        .view-btn:hover {
+            background: #f8f8f8;
+        }
+
+
+        .view-btn img {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Content */
+
+        .product-content {
+            padding: 22px;
+        }
+
+        .product-title {
+
+            margin: 10px 0 15px;
+            font-size: 18px;
+            font-family: 'Vazir', sans-serif;
+            text-align: center;
+        }
+
+        .product-price {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .new-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #828282;
+            font-size: 14px;
+        }
+
+        /* Button */
+
+        .add-to-cart {
+            width: 100%;
+            padding: 14px;
+            border-radius: 30px;
+            border: none;
+            font-family: inherit;
+            background: var(--purple);
+            color: #ffffff;
+            background: #717799;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #5f6897;
+        }
+
+        .toast {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 16px 25px;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+            z-index: 9999;
+
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all .4s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .add-to-cart {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="product-toolbar">
+
+        <span>مرتب سازی :</span>
+
+        <button class="sort-btn active" data-sort="new">
+            جدیدترین
+        </button>
+
+        <button class="sort-btn" data-sort="cheap">
+            ارزان‌ترین
+        </button>
+
+        <button class="sort-btn" data-sort="expensive">
+            گران‌ترین
+        </button>
+
+    </div>
+
+    <div class="products-grid">
+
+        <!-- محصول اول -->
+
+        <div class="product-card" data-price="275000">
+
+            <div class="discount-badge">48%</div>
+
+            <div class="product-image">
+
+                <img src="image/rog1.png">
+
+                <div class="image-actions">
+                    <a href="tozihat1.html">
+                        <button class="view-btn">
+                            <img src="image/zar.png.png" alt="">
+                            <span>نمایش بیشتر</span>
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="product-content">
+
+                <h3 class="product-title">
+                    رژگونه مایع کالیستا مدل Rosy Glow
+                </h3>
+
+                <div class="product-price">
+
+                    <span class="new-price">
+                        275,000 تومان
+                    </span>
+
+                    <span class="old-price">
+                        530,000 تومان
+                    </span>
+
+                </div>
+
+                <button class="add-to-cart">
+                    افزودن به سبد خرید
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- محصول دوم -->
+
+        <div class="product-card" data-price="649000">
+
+            <div class="discount-badge">46%</div>
+
+            <div class="product-image">
+
+                <img src="image/saye1.png">
+
+                <div class="image-actions">
+                    <a href="tozihat.html">
+                        <button class="view-btn">
+                            <img src="image/zar.png.png" alt="">
+                            <span>نمایش بیشتر</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-content">
+
+                <h3 class="product-title">
+                    پالت سایه چشم سوپرتاچ
+                </h3>
+
+                <div class="product-price">
+
+                    <span class="new-price">
+                        649,000 تومان
+                    </span>
+
+                    <span class="old-price">
+                        1,200,000 تومان
+                    </span>
+
+                </div>
+
+                <button class="add-to-cart">
+                    افزودن به سبد خرید
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--محصول سوم-->
+        <div class="product-card" data-price="289000">
+
+            <div class="discount-badge">٪32.8</div>
+
+            <div class="product-image">
+
+                <img src="image/poder.png">
+
+                <div class="image-actions">
+                    <a href="tozihat2.html">
+                        <button class="view-btn">
+                            <img src="image/zar.png.png" alt="">
+                            <span>نمایش بیشتر</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-content">
+
+                <h3 class="product-title">
+                    کرم پودر مایع ساین اسکین مدل Beauty Balm
+                </h3>
+
+                <div class="product-price">
+
+                    <span class="new-price">
+                        289,000 تومان
+                    </span>
+
+                    <span class="old-price">
+                        430,000 تومان
+                    </span>
+
+                </div>
+
+                <button class="add-to-cart">
+                    افزودن به سبد خرید
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--محصول چهارم-->
+        <div class="product-card" data-price="880300">
+
+            <div class="discount-badge">٪24.1</div>
+
+            <div class="product-image">
+                <img src="image/rem1.png" alt="ریمل">
+
+                <div class="image-actions">
+                    <a href="tozihat4.html">
+                        <button class="view-btn">
+                            <img src="image/zar.png.png" alt="">
+                            <span>نمایش بیشتر</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-content">
+                <h3 class="product-title">
+                    ریمل حجم‌دهنده و بلندکننده دورا مدل Big
+                </h3>
+
+                <div class="product-price">
+                    <span class="new-price">880,300 تومان</span>
+                    <span class="old-price">1,120,000 تومان</span>
+                </div>
+
+                <button class="add-to-cart">
+                    افزودن به سبد خرید
+                </button>
+            </div>
+
+        </div>
+
+        <!-- محصول پنجم -->
+
+        <div class="product-card" data-price="430000">
+
+            <div class="discount-badge">%36.8</div>
+
+            <div class="product-image">
+                <img src="image/ab1.png" alt="ژل لیفت ابرو">
+
+                <div class="image-actions">
+                    <a href="tozihat3.html">
+                        <button class="view-btn">
+                            <img src="image/zar.png.png" alt="">
+                            <span>نمایش بیشتر</span>
+                        </button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-content">
+
+                <h3 class="product-title">
+                    ژل لیفت ابرو بریستون مدل Styling Wax
+                </h3>
+
+                <div class="product-price">
+                    <span class="new-price">430,000 تومان</span>
+                    <span class="old-price">680,000 تومان</span>
+                </div>
+
+                <button class="add-to-cart">
+                    افزودن به سبد خرید
+                </button>
+
+            </div>
+
+        </div>
+
+        <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const buttons = document.querySelectorAll(".sort-btn");
+  const grid = document.querySelector(".products-grid");
+
+  // ===== SORT =====
+  buttons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      let cards = [...document.querySelectorAll(".product-card")];
+
+      if (btn.dataset.sort === "cheap") {
+        cards.sort((a, b) =>
+          +a.dataset.price - +b.dataset.price
+        );
+      }
+
+      if (btn.dataset.sort === "expensive") {
+        cards.sort((a, b) =>
+          +b.dataset.price - +a.dataset.price
+        );
+      }
+
+      cards.forEach(card => grid.appendChild(card));
+
+    });
+
+  });
+
+  // ===== CART + SAVED =====
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let saved = JSON.parse(localStorage.getItem("savedProducts")) || [];
+
+  document.querySelectorAll(".add-to-cart").forEach(btn => {
+
+    btn.addEventListener("click", function () {
+
+      const card = btn.closest(".product-card");
+
+      const product = {
+        title: card.querySelector(".product-title").innerText,
+        price: card.querySelector(".new-price").innerText,
+        image: card.querySelector("img").src
+      };
+
+      // CART
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // جلوگیری از تکرار در savedProducts
+      let exists = saved.some(p => p.title === product.title);
+
+      if (!exists) {
+        saved.push(product);
+        localStorage.setItem("savedProducts", JSON.stringify(saved));
+      }
+
+      // TOAST
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.innerText = "✓ محصول ذخیره شد";
+
+      document.body.appendChild(toast);
+
+      setTimeout(() => toast.classList.add("show"), 10);
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 300);
+      }, 2500);
+
+    });
+
+  });
+
+});
+
+        </script>
+
+</body>
+
+</html>

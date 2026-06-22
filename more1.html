@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای انتخاب کرم پودر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --bg1: #ffe4f1;
+            --bg2: #e3f0ff;
+            --card: rgba(255, 255, 255, 0.7);
+            --text: #2b2b2b;
+            --muted: #777;
+            --primary: #ff4f9b;
+            --secondary: #6c63ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: tahoma;
+        }
+
+        body {
+            background: linear-gradient(-45deg, var(--bg1), var(--bg2), #fff1f8, #e9fff5);
+            background-size: 400% 400%;
+            animation: bgMove 12s ease infinite;
+            color: var(--text);
+        }
+
+        @keyframes bgMove {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        /* progress */
+        #progress {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 9999;
+        }
+
+        /* header */
+        header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.6);
+            padding: 25px 18px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        /* back button */
+        header a {
+            color: #000;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* logo center */
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .logo span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #ff4f9b, #6c63ff);
+        }
+
+        .logo span {
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+        }
+
+        /* layout */
+        .wrapper {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* hero */
+        .hero {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+
+        /* card */
+        .card {
+            margin-top: 20px;
+            background: var(--card);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .readtime {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 2.3;
+            font-size: 15px;
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        /* note */
+        .note {
+            background: linear-gradient(90deg,
+                    #fff5fa,
+                    #ffffff);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, .15);
+            border-right: 4px solid var(--primary);
+            padding: 14px;
+            border-radius: 12px;
+            margin: 15px 0;
+        }
+
+        /* author */
+        .author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .author img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        /* comments */
+        .comments {
+            margin-top: 30px;
+        }
+
+        .comments h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .comment {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            transition: .3s;
+        }
+
+        .comment:hover {
+            transform: translateX(-5px);
+        }
+
+        .comment small {
+            color: var(--muted);
+        }
+
+        /* progress */
+        #progress {
+            transition: width .2s ease;
+        }
+
+        @media(max-width:768px) {
+            .hero img {
+                height: 220px;
+            }
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-top: -25px;
+        }
+
+        .logo img {
+            width: 100px;
+            /* اندازه لوگو */
+            height: auto;
+        }
+
+        #tree {
+            font-size: 18px;
+            font-family: 'Vazirmatn', sans-serif;
+
+        }
+
+        .card h1 {
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 25px;
+        }
+
+        .author strong {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(-45deg, var(--bg1), var(--bg2), #fff1f8, #e9fff5);
+            background-size: 400% 400%;
+            animation:
+                bgMove 12s ease infinite,
+                fadePage 1s ease;
+            color: var(--text);
+        }
+
+        @keyframes fadePage {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .add-comment {
+            margin-top: 25px;
+        }
+
+        .add-comment input,
+        .add-comment textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, .6);
+            font-family: tahoma;
+        }
+
+        .add-comment textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .add-comment button {
+            margin-top: 12px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            cursor: pointer;
+        }
+
+        .share {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .share h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .share-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .share-icons a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #555;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .share-icons a:hover {
+            background: #ff5ca8;
+            color: white;
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="progress"></div>
+
+    <header>
+        <div class="logo">
+            <img src="image/icon2.png" alt="بیوتی شاپ">
+        </div>
+
+        <a href="blog.html" id="tree">← بازگشت</a>
+    </header>
+
+    <div class="wrapper">
+
+        <div class="hero">
+            <img src="image/ceram.png" alt="foundation">
+        </div>
+
+        <div class="card">
+
+            <h1>راهنمای کامل انتخاب کرم پودر مناسب برای انواع پوست</h1>
+            <div class="meta">بلاگ زیبایی • مقاله آموزشی</div>
+            <div class="readtime">⏱ زمان مطالعه: 5 دقیقه</div>
+
+            <!-- INTRO -->
+            <p>
+                کرم پودر یکی از اصلی‌ترین محصولات آرایشی است که نقش پایه‌ای در یک میکاپ حرفه‌ای دارد. انتخاب درست آن نه
+                تنها باعث یکدست شدن پوست می‌شود، بلکه می‌تواند جلوه کلی آرایش را طبیعی‌تر و زیباتر نشان دهد.
+            </p>
+
+            <!-- SKIN TYPE -->
+            <p>
+                اولین و مهم‌ترین قدم در انتخاب کرم پودر، شناخت نوع پوست است. پوست‌ها معمولاً به چهار دسته خشک، چرب،
+                مختلط و نرمال تقسیم می‌شوند و هرکدام نیازهای متفاوتی دارند.
+            </p>
+
+            <div class="note">
+                ✨ نکته مهم: اگر نوع پوست خود را اشتباه تشخیص دهید، حتی بهترین کرم پودر هم نتیجه خوبی نخواهد داشت.
+            </div>
+
+            <p>
+                اگر پوست خشکی دارید، باید به دنبال کرم پودرهایی باشید که خاصیت آبرسانی و مرطوب‌کنندگی دارند تا از
+                پوسته‌پوسته شدن جلوگیری کنند. در مقابل، پوست‌های چرب نیاز به محصولات مات‌کننده دارند تا برق اضافی پوست
+                کنترل شود.
+            </p>
+
+            <!-- COLOR -->
+            <p>
+                انتخاب رنگ کرم پودر یکی از حساس‌ترین مراحل آرایش است. اگر رنگ خیلی روشن یا خیلی تیره انتخاب شود، حالت
+                مصنوعی روی صورت ایجاد می‌کند.
+            </p>
+
+            <p>
+                بهترین روش این است که رنگ کرم پودر را روی خط فک تست کنید و آن را در نور طبیعی بررسی کنید. رنگ مناسب باید
+                بدون اینکه دیده شود با پوست شما ترکیب شود.
+            </p>
+
+            <div class="note">
+                💡 پیشنهاد حرفه‌ای: همیشه کرم پودر را در نور طبیعی تست کنید، نه نور فروشگاه.
+            </div>
+
+            <!-- PRO TIPS -->
+            <p>
+                میکاپ آرتیست‌های حرفه‌ای معمولاً قبل از استفاده از کرم پودر، از پرایمر استفاده می‌کنند تا پوست صاف‌تر
+                شود و ماندگاری آرایش افزایش پیدا کند.
+            </p>
+
+            <p>
+                همچنین مقدار کم کرم پودر بهتر از مقدار زیاد آن است؛ زیرا لایه‌های نازک باعث طبیعی‌تر شدن نتیجه نهایی
+                می‌شوند.
+            </p>
+
+            <!-- CONCLUSION -->
+            <p>
+                در نهایت، انتخاب درست کرم پودر ترکیبی از شناخت پوست، انتخاب رنگ مناسب و استفاده صحیح از محصول است. رعایت
+                این نکات ساده می‌تواند تفاوت بزرگی در نتیجه نهایی آرایش ایجاد کند.
+            </p>
+
+            <div class="share">
+                <h3>📤 اشتراک‌گذاری مقاله</h3>
+
+                <div class="share-icons">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+
+            <!-- AUTHOR -->
+            <div class="author">
+                <img src="https://i.pravatar.cc/100">
+                <div>
+                    <strong>نویسنده بلاگ</strong>
+                    <div style="font-size:12px;color:#777">متخصص زیبایی و مراقبت پوست</div>
+                </div>
+            </div>
+
+            <!-- COMMENTS -->
+            <div class="comments">
+                <h3>💬 نظرات کاربران</h3>
+
+                <div class="comment">
+                    خیلی مقاله کامل و مفیدی بود 👌<br>
+                    <small>سارا</small>
+                </div>
+
+                <div class="comment">
+                    توضیحات خیلی قابل فهم بود 👍<br>
+                    <small>مریم</small>
+                </div>
+                <div class="add-comment">
+                    <h3>✍ افزودن نظر</h3>
+
+                    <input type="text" id="nameInput" placeholder="نام شما">
+
+                    <textarea id="commentInput" placeholder="نظر خود را بنویسید"></textarea>
+
+                    <button onclick="addComment()">ارسال نظر</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let winScroll = document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("progress").style.width = (winScroll / height) * 100 + "%";
+        });
+        function addComment() {
+
+            let name = document.getElementById("nameInput").value;
+            let text = document.getElementById("commentInput").value;
+
+            if (name === "" || text === "") return;
+
+            let commentBox = document.createElement("div");
+            commentBox.className = "comment";
+
+            commentBox.innerHTML = `
+        ${text}<br>
+        <small>${name}</small>
+    `;
+
+            document.querySelector(".comments").insertBefore(
+                commentBox,
+                document.querySelector(".add-comment")
+            );
+
+            document.getElementById("nameInput").value = "";
+            document.getElementById("commentInput").value = "";
+        }
+    </script>
+
+</body>
+
+</html>
