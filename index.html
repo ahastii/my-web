@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="بیوتی شاپ، فروشگاه آنلاین محصولات آرایشی و مراقبت از پوست با بهترین قیمت."/>
-  <link href="style.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link href="css/style.css" rel="stylesheet" />
   <title>فروشگاه بیوتی شاپ</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -44,36 +46,129 @@
 
     <div class="topbar">
       <div class="logo">
-        <img src="icon2.png" alt="بیوتی شاپ">
+        <img src="image/icon2.png" alt="بیوتی شاپ">
       </div>
       <div class="search"><input id="searchInput" placeholder="🔍جستجوی محصولات..."></div>
       <div id="textt">
-        <a href="first.html"> ورود | ثبت‌نام</a>
+
+        <a href="first.html">
+
+          <i class="fa-solid fa-user"></i>
+
+          <span>ورود | ثبت‌نام</span>
+
+        </a>
+
       </div>
     </div>
-    <nav class="active">
-      <a href="index.html">صفحه نخست</a>
-      <a href="blog.html">بلاگ</a>
-      <a href="call.html">تماس با ما</a>
-      <a href="saved.html">محصولات ذخیره‌شده</a>
+    <nav class="desktop-menu">
+
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>صفحه نخست</span>
+      </a>
+
+      <a href="blog.html">
+        <i class="fa-solid fa-newspaper"></i>
+        <span>بلاگ</span>
+      </a>
+
+      <a href="call.html">
+        <i class="fa-solid fa-phone"></i>
+        <span>تماس با ما</span>
+      </a>
+
+      <a href="saved.html">
+        <i class="fa-solid fa-heart"></i>
+        <span>ذخیره شده</span>
+      </a>
+
     </nav>
 
   </header>
 
   <section class="hero">
-    <div class="hero-main">
-      <div>
-        <h1>فروشگاه بیوتی شاپ</h1>
-        <p>فروش لوازم آرایشی و بهداشتی</p>
-        <a href="arayesh.html"><button class="buy-btn">مشاهده محصولات</button></a>
+    <div class="hero-main slider">
+
+
+      <div class="hero-slide active">
+
+        <div>
+          <h1>فروشگاه بیوتی شاپ</h1>
+
+          <p>
+            فروش لوازم آرایشی و بهداشتی
+          </p>
+
+          <a href="arayesh.html">
+            <button class="buy-btn">
+              مشاهده محصولات
+            </button>
+          </a>
+
+        </div>
+
+        <img src="image/oper.png">
+
       </div>
-      <img src="oper.png" alt="">
+
+
+
+      <div class="hero-slide">
+
+
+        <div>
+
+          <h1>
+            آرایش حرفه‌ای با بیوتی شاپ
+          </h1>
+
+          <p>
+            جدیدترین محصولات آرایشی
+          </p>
+
+          <a href="arayesh.html">
+
+            <button class="buy-btn">
+              خرید کنید
+            </button>
+
+          </a>
+
+        </div>
+
+
+        <img src="image/pinku.png">
+
+      </div>
+
+
+      <button class="hero-prev">
+        ❮
+      </button>
+
+
+      <button class="hero-next">
+        ❯
+      </button>
+
+
+
+      <div class="hero-dots">
+
+        <span class="active"></span>
+        <span></span>
+
+
+      </div>
+
+
     </div>
     <div class="hero-side">
       <h3>محصولات مرطوب کننده و آبرسان</h3>
       <p>انتخاب برتر بانوان</p>
       <a href="rotin.html"><button class="buy-btn">خرید</button></a>
-      <img src="hot.png.png" alt="">
+      <img src="image/hot.png.png" alt="">
 
     </div>
   </section>
@@ -88,12 +183,12 @@
         <div class="discount-badge">%36.8</div>
 
         <div class="product-image">
-          <img src="ab1.png" alt="ژل لیفت ابرو">
+          <img src="image/ab1.png" alt="ژل لیفت ابرو">
 
           <div class="image-actions">
             <a href="tozihat3.html">
               <button class="view-btn">
-                <img src="zar.png.png" alt="">
+                <img src="image/zar.png.png" alt="">
                 <span>نمایش بیشتر</span>
               </button>
             </a>
@@ -119,18 +214,18 @@
         <div class="discount-badge">٪32.8</div>
 
         <div class="product-image">
-          <img src="poder.png" alt="ژل لیفت ابرو">
+          <img src="image/poder.png" alt="ژل لیفت ابرو">
 
           <div class="image-actions">
 
             <a href="tozihat2.html">
               <button class="view-btn">
-                <img src="zar.png.png" alt="">
+                <img src="image/zar.png.png" alt="">
                 <span>نمایش بیشتر</span>
               </button>
             </a>
             <!--  <button class="icon-btn quickview">
-              <img src="har.png.png" alt="">
+              <img src="image/har.png.png" alt="">
             </button>
           -->
 
@@ -156,13 +251,13 @@
         <div class="discount-badge">٪48.1</div>
 
         <div class="product-image">
-          <img src="rog1.png" alt="ژل لیفت ابرو">
+          <img src="image/rog1.png" alt="ژل لیفت ابرو">
 
           <div class="image-actions">
 
             <a href="tozihat1.html">
               <button class="view-btn">
-                <img src="zar.png.png" alt="">
+                <img src="image/zar.png.png" alt="">
                 <span>نمایش بیشتر</span>
               </button>
             </a>
@@ -179,10 +274,9 @@
           افزودن به سبد خرید
         </button>
 
-        <!--محصول چهارم-->
-
       </div>
 
+      <!--محصول چهارم-->
 
       <div class="product-card">
 
@@ -190,13 +284,13 @@
         <div class="discount-badge">٪24.1</div>
 
         <div class="product-image">
-          <img src="rem1.png" alt="ژل لیفت ابرو">
+          <img src="image/rem1.png" alt="ژل لیفت ابرو">
 
           <div class="image-actions">
 
             <a href="tozihat4.html">
               <button class="view-btn">
-                <img src="zar.png.png" alt="">
+                <img src="image/zar.png.png" alt="">
                 <span>نمایش بیشتر</span>
               </button>
             </a>
@@ -217,146 +311,160 @@
 
       <!--محصول پنجم-->
 
-    </div>
-    </br></br>
+      <div class="product-card">
 
-    <div class="product-card">
+        <div class="discount-badge">٪19</div>
 
-      <div class="discount-badge">٪19</div>
+        <div class="product-image">
+          <img src="image/crm23.png" alt="ژل لیفت ابرو">
 
-      <div class="product-image">
-        <img src="crm1.png" alt="ژل لیفت ابرو">
+          <div class="image-actions">
 
-        <div class="image-actions">
+            <a href="tozihat5.html">
+              <button class="view-btn">
+                <img src="image/zar.png.png" alt="">
+                <span>نمایش بیشتر</span>
+              </button>
+            </a>
 
-          <a href="tozihat5.html">
-            <button class="view-btn">
-              <img src="zar.png.png" alt="">
-              <span>نمایش بیشتر</span>
-            </button>
-          </a>
-
+          </div>
         </div>
-      </div>
 
-      <h3 class="product-title">کرم آبرسان راکوتن مدل Prebiotic</h3>
+        <h3 class="product-title">کرم آبرسان راکوتن مدل Prebiotic</h3>
 
-      <div class="product-price">
-        <span class="new-price">369,000 تومان</span>
-        <span class="old-price">456,900 تومان</span>
-      </div>
-      <button class="add-to-cart">
-        افزودن به سبد خرید
-      </button>
-    </div>
-
-    <!--محصول ششم-->
-
-    </div>
-
-
-    <div class="product-card">
-
-      <div class="discount-badge">٪20</div>
-
-      <div class="product-image">
-        <img src="crm2.png" alt="ژل لیفت ابرو">
-
-        <div class="image-actions">
-
-          <a href="tozihat6.html">
-            <button class="view-btn">
-              <img src="zar.png.png" alt="">
-              <span>نمایش بیشتر</span>
-            </button>
-          </a>
-
+        <div class="product-price">
+          <span class="new-price">369,000 تومان</span>
+          <span class="old-price">456,900 تومان</span>
         </div>
+        <button class="add-to-cart">
+          افزودن به سبد خرید
+        </button>
       </div>
 
-      <h3 class="product-title">محلول تقویت کننده مژه سریتا </h3>
+      <!--محصول ششم-->
 
-      <div class="product-price">
-        <span class="new-price">1,272,000 تومان</span>
-        <span class="old-price">1,585,900 تومان</span>
-      </div>
-      <button class="add-to-cart">
-        افزودن به سبد خرید
-      </button>
-    </div>
+      <div class="product-card">
 
-    <!--محصول هفتم-->
+        <div class="discount-badge">٪20</div>
 
-    </div>
+        <div class="product-image">
+          <img src="image/crm2.png" alt="ژل لیفت ابرو">
 
+          <div class="image-actions">
 
-    <div class="product-card">
+            <a href="tozihat6.html">
+              <button class="view-btn">
+                <img src="image/zar.png.png" alt="">
+                <span>نمایش بیشتر</span>
+              </button>
+            </a>
 
-      <div class="discount-badge">٪40</div>
-
-      <div class="product-image">
-        <img src="crm3.png" alt="ژل لیفت ابرو">
-
-        <div class="image-actions">
-
-          <a href="tozihat7.html">
-            <button class="view-btn">
-              <img src="zar.png.png" alt="">
-              <span>نمایش بیشتر</span>
-            </button>
-          </a>
-
+          </div>
         </div>
-      </div>
 
-      <h3 class="product-title">فوم شست‌وشوی صورت ویتالیر</h3>
+        <h3 class="product-title">محلول تقویت کننده مژه سریتا </h3>
 
-      <div class="product-price">
-        <span class="new-price">265,020 تومان</span>
-        <span class="old-price">441,700 تومان</span>
-      </div>
-      <button class="add-to-cart">
-        افزودن به سبد خرید
-      </button>
-    </div>
-
-    <!--محصول هشتم-->
-
-    </div>
-
-
-    <div class="product-card">
-
-      <div class="discount-badge">٪30</div>
-
-      <div class="product-image">
-        <img src="crm4.png" alt="ژل لیفت ابرو">
-
-        <div class="image-actions">
-
-          <a href="tozihat8.html">
-            <button class="view-btn">
-              <img src="zar.png.png" alt="">
-              <span>نمایش بیشتر</span>
-            </button>
-          </a>
-
+        <div class="product-price">
+          <span class="new-price">1,272,000 تومان</span>
+          <span class="old-price">1,585,900 تومان</span>
         </div>
+        <button class="add-to-cart">
+          افزودن به سبد خرید
+        </button>
       </div>
 
-      <h3 class="product-title">تونر پاک‌کننده صورت ژنوبایوتیک </h3>
+      <!--محصول هفتم-->
 
-      <div class="product-price">
-        <span class="new-price">441,630 تومان</span>
-        <span class="old-price">630,900 تومان</span>
+
+      <div class="product-card">
+
+        <div class="discount-badge">٪40</div>
+
+        <div class="product-image">
+          <img src="image/crm3.png" alt="ژل لیفت ابرو">
+
+          <div class="image-actions">
+
+            <a href="tozihat7.html">
+              <button class="view-btn">
+                <img src="image/zar.png.png" alt="">
+                <span>نمایش بیشتر</span>
+              </button>
+            </a>
+
+          </div>
+        </div>
+
+        <h3 class="product-title">فوم شست‌وشوی صورت ویتالیر</h3>
+
+        <div class="product-price">
+          <span class="new-price">265,020 تومان</span>
+          <span class="old-price">441,700 تومان</span>
+        </div>
+        <button class="add-to-cart">
+          افزودن به سبد خرید
+        </button>
       </div>
-      <button class="add-to-cart">
-        افزودن به سبد خرید
-      </button>
+
+      <!--محصول هشتم-->
+
+
+      <div class="product-card">
+
+        <div class="discount-badge">٪30</div>
+
+        <div class="product-image">
+          <img src="image/crm4.png" alt="ژل لیفت ابرو">
+
+          <div class="image-actions">
+
+            <a href="tozihat8.html">
+              <button class="view-btn">
+                <img src="image/zar.png.png" alt="">
+                <span>نمایش بیشتر</span>
+              </button>
+            </a>
+
+          </div>
+        </div>
+
+        <h3 class="product-title">تونر پاک‌کننده صورت ژنوبایوتیک </h3>
+
+        <div class="product-price">
+          <span class="new-price">441,630 تومان</span>
+          <span class="old-price">630,900 تومان</span>
+        </div>
+        <button class="add-to-cart">
+          افزودن به سبد خرید
+        </button>
+      </div>
     </div>
 
     <!-- <button id="sert">...more</button> -->
   </section>
+  <nav class="bottom-mobile-menu">
+
+    <a href="index.html">
+      <i class="fa-solid fa-house"></i>
+      <span>خانه</span>
+    </a>
+
+    <a href="blog.html">
+      <i class="fa-solid fa-newspaper"></i>
+      <span>وبلاگ</span>
+    </a>
+
+    <a href="call.html">
+      <i class="fa-solid fa-phone"></i>
+      <span>تماس با ما</span>
+    </a>
+
+    <a href="saved.html">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span>سبد خرید</span>
+    </a>
+
+  </nav>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -435,12 +543,61 @@
 
       });
     });
+
+
+
+    let heroSlides = document.querySelectorAll(".hero-slide");
+    let heroDots = document.querySelectorAll(".hero-dots span");
+
+    let heroIndex = 0;
+
+
+    function changeHero() {
+
+      heroSlides.forEach(s => s.classList.remove("active"));
+      heroDots.forEach(d => d.classList.remove("active"));
+
+
+      heroSlides[heroIndex].classList.add("active");
+      heroDots[heroIndex].classList.add("active");
+
+
+    }
+
+
+
+    document.querySelector(".hero-next").onclick = function () {
+
+      heroIndex++;
+
+      if (heroIndex >= heroSlides.length) {
+        heroIndex = 0;
+      }
+
+      changeHero();
+
+    }
+
+
+
+    document.querySelector(".hero-prev").onclick = function () {
+
+      heroIndex--;
+
+      if (heroIndex < 0) {
+        heroIndex = heroSlides.length - 1;
+      }
+
+      changeHero();
+
+    }
   </script>
 
   <footer>
     © 2026 Beauty Shop - تمامی حقوق محفوظ است
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
