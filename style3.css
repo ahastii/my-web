@@ -27,7 +27,8 @@ body {
 }
 
 .logo img {
-    width: 100px;   /* اندازه لوگو */
+    width: 100px;
+    /* اندازه لوگو */
     height: auto;
 }
 
@@ -293,6 +294,7 @@ button:hover {
 
     animation: fadeUp .4s ease;
 }
+
 .toast {
     position: fixed;
     bottom: 30px;
@@ -320,4 +322,312 @@ button:hover {
 
 .toast.error {
     border-right: 4px solid #ef4444;
+}
+
+/* ===============================
+   Professional Responsive Contact
+================================ */
+
+
+/* تبلت */
+@media(max-width:1100px) {
+
+    .contact-page {
+        padding: 30px;
+    }
+
+
+    .contact-box {
+        max-width: 900px;
+    }
+
+
+    .left,
+    .right {
+
+        padding: 45px;
+
+    }
+
+
+    h1 {
+
+        font-size: 38px;
+
+    }
+
+}
+
+
+/* موبایل */
+/* ==========================
+   Mobile Layout
+========================== */
+
+@media (max-width:768px){
+
+    body{
+        align-items:flex-start;
+        overflow-y:auto;
+    }
+
+    .contact-page{
+        padding:15px;
+    }
+
+    .contact-box{
+
+        display:flex;
+        flex-direction:row;
+
+        align-items:stretch;
+
+        border-radius:25px;
+    }
+
+    /* فرم */
+    .left{
+
+        flex:2.4;
+
+        padding:25px 18px;
+    }
+
+    /* اطلاعات تماس */
+    .right{
+
+        flex:.75;
+
+        padding:20px 10px;
+
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+
+    }
+
+    /* عنوان حذف شود */
+    .right h2{
+        display:none;
+    }
+
+    /* حذف دایره‌های بک‌گراند */
+    .circle{
+        display:none;
+    }
+
+    /* کارت‌های ارتباطی */
+
+    .contact-item{
+
+        margin:12px 0;
+
+        display:flex;
+        flex-direction:column;
+
+        justify-content:center;
+        align-items:center;
+
+        gap:8px;
+    }
+
+    .contact-item i{
+
+        width:46px;
+        height:46px;
+
+        font-size:18px;
+
+        background:rgba(255,255,255,.12);
+
+        border-radius:50%;
+    }
+
+    .contact-item span{
+
+        font-size:10px;
+
+        text-align:center;
+
+        line-height:1.6;
+
+        word-break:break-word;
+    }
+
+    /* لوگو */
+
+    .logo{
+
+        margin-top:0;
+        margin-bottom:15px;
+
+    }
+
+    .logo img{
+
+        width:70px;
+
+    }
+
+    h1{
+
+        font-size:28px;
+
+        text-align:center;
+
+    }
+
+    .subtitle{
+
+        text-align:center;
+
+        font-size:13px;
+
+        margin-bottom:20px;
+
+    }
+
+    input,
+    textarea{
+
+        font-size:14px;
+
+        padding:15px 48px 15px 15px;
+
+    }
+
+    textarea{
+
+        height:130px;
+
+    }
+
+    button{
+
+        padding:15px;
+
+        font-size:14px;
+
+    }
+
+
+
+
+
+    /* اطلاعات تماس */
+
+    .right {
+
+        order: 2;
+
+        padding: 35px 20px;
+
+        border-radius: 0 0 25px 25px;
+
+    }
+
+
+
+    .right h2 {
+
+        font-size: 24px;
+
+        text-align: center;
+
+        margin-bottom: 30px;
+
+    }
+
+
+
+    .contact-item {
+
+        margin-bottom: 20px;
+
+        font-size: 13px;
+
+    }
+
+
+
+    .contact-item i {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 15px;
+
+    }
+
+
+
+    /* دایره ها */
+
+    .one {
+
+        width: 120px;
+
+        height: 120px;
+
+    }
+
+
+    .two {
+
+        width: 170px;
+
+        height: 170px;
+
+    }
+
+
+
+    /* Toast */
+
+    .toast {
+
+        right: 15px;
+
+        left: 15px;
+
+        bottom: 20px;
+
+        text-align: center;
+
+    }
+
+}
+
+
+
+/* موبایل خیلی کوچک */
+@media(max-width:360px) {
+
+
+    .left,
+    .right {
+
+        padding: 25px 15px;
+
+    }
+
+
+
+    h1 {
+
+        font-size: 24px;
+
+    }
+
+
+
+    .contact-item span {
+
+        font-size: 12px;
+
+    }
+
+
 }
