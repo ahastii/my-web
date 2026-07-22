@@ -13,9 +13,43 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #E195AB, #1e293b, #2563eb);
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
     color: white;
+}
+
+.close-btn {
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .15);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+
 }
 
 /* دایره‌های نورانی */
@@ -24,23 +58,6 @@ body {
     border-radius: 50%;
     filter: blur(120px);
     animation: float 8s infinite ease-in-out;
-}
-
-.circle1 {
-    width: 300px;
-    height: 300px;
-    background: #2563eb;
-    top: -100px;
-    right: -100px;
-}
-
-.circle2 {
-    width: 350px;
-    height: 350px;
-    background: #4f46e5;
-    left: -100px;
-    bottom: -100px;
-    animation-delay: 2s;
 }
 
 @keyframes float {
@@ -242,4 +259,254 @@ body {
 
 .toast.error {
     border-right: 4px solid #ef4444;
+}
+
+
+/* ===========================
+   Professional Responsive
+=========================== */
+
+
+/* تبلت */
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    .container {
+        max-width: 450px;
+        width: 100%;
+        padding: 35px 30px;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+}
+
+
+
+/* موبایل */
+@media (max-width: 600px) {
+
+
+    body {
+        min-height: 100svh;
+        padding: 15px;
+        align-items: center;
+        overflow-y: auto;
+    }
+
+
+    .container {
+
+        width: 100%;
+        max-width: 380px;
+
+        padding: 28px 18px;
+
+        border-radius: 24px;
+        position: relative;
+        backdrop-filter: blur(25px);
+
+    }
+
+
+
+    /* لوگو */
+
+    .logo img {
+
+        height: 70px;
+
+        margin-bottom: 12px;
+
+    }
+
+
+
+    /* تب ها */
+
+    .tabs {
+
+        margin-bottom: 20px;
+
+        padding: 5px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .tab {
+
+        padding: 10px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    /* input */
+
+    .form-group {
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .form-group input {
+
+        padding: 15px 42px;
+
+        height: 52px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .form-group label {
+
+        top: 15px;
+
+        font-size: 13px;
+
+    }
+
+
+
+    .icon {
+
+        font-size: 16px;
+
+        left: 14px;
+
+    }
+
+
+
+    /* دکمه */
+
+    .submit-button {
+
+        height: 52px;
+
+        padding: 0;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .terms {
+
+        font-size: 11px;
+
+        margin-top: 18px;
+
+    }
+
+
+    /* نورهای پس زمینه */
+
+    .circle1 {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+
+    .circle2 {
+
+        width: 220px;
+
+        height: 220px;
+
+    }
+
+
+}
+
+
+
+/* موبایل های خیلی کوچک */
+
+@media(max-width:360px) {
+
+
+    .container {
+
+        padding: 25px 15px;
+
+    }
+
+
+    .logo img {
+
+        height: 60px;
+
+    }
+
+
+    .tabs .tab {
+
+        font-size: 13px;
+
+    }
+
+
+    .form-group input {
+
+        height: 48px;
+
+    }
+
+    /* دکمه خروج */
+
+    .close-btn {
+
+        position: absolute;
+
+        top: 20px;
+        right: 20px;
+
+        width: 30px;
+        height: 30px;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, .15);
+
+        color: white;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        backdrop-filter: blur(10px);
+
+        transition: .3s;
+
+    }
+
+
+
 }
