@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
   <title>بلاگ زیبایی | فروشگاه آرایشی</title>
 
   <style>
@@ -22,6 +23,7 @@
       animation: pageFade 1.1s ease forwards;
       opacity: 0;
     }
+
 
     @keyframes pageFade {
       to {
@@ -45,6 +47,41 @@
       align-items: center;
 
     }
+
+    .mobile-back {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+
+      width: 35px;
+      height: 35px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: linear-gradient(135deg, #ffb5ce, #ff4f9b);
+
+      color: white;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 20px rgba(255, 79, 155, .35);
+
+      z-index: 999;
+
+      transition: .3s;
+    }
+
+
+    .mobile-back:hover {
+      transform: translateY(-3px);
+    }
+
+
 
     .logo {
       font-size: 20px;
@@ -203,14 +240,289 @@
         padding: 15px 20px;
       }
     }
+
+    /* =========================
+   Professional Responsive Blog
+========================= */
+
+
+    /* تبلت */
+    @media(max-width: 992px) {
+
+      header {
+        padding: 15px 30px;
+      }
+
+
+      .hero {
+
+        width: 92%;
+        padding: 45px 30px;
+        margin-top: 40px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 28px;
+
+      }
+
+
+      .posts {
+
+        gap: 25px;
+
+      }
+
+
+      .post img {
+
+        height: 210px;
+
+      }
+
+    }
+
+
+
+    /* موبایل */
+    @media(max-width:768px) {
+
+
+      body {
+
+        overflow-x: hidden;
+
+      }
+
+
+
+      header {
+
+        width: 100%;
+
+        padding: 12px 20px;
+
+        justify-content: center;
+
+      }
+
+
+
+      .logo img {
+
+        height: 60px;
+
+      }
+
+
+
+      .hero {
+
+        width: 92%;
+
+        margin: 30px auto;
+
+        padding: 35px 20px;
+
+        border-radius: 25px;
+
+      }
+
+
+
+      .hero h1 {
+
+        font-size: 22px;
+
+        line-height: 1.8;
+
+        margin-bottom: 10px;
+
+      }
+
+
+
+      .hero p {
+
+        font-size: 13px;
+
+        line-height: 2;
+
+      }
+
+
+
+      .container {
+
+        width: 92%;
+
+        padding-bottom: 40px;
+
+      }
+
+
+
+      .posts {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+      }
+
+
+
+      .post {
+
+        border-radius: 22px;
+
+      }
+
+
+
+      .post img {
+
+        height: 190px;
+
+      }
+
+
+
+      .post-body {
+
+        padding: 18px;
+
+      }
+
+
+
+      .post-body h2 {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+      }
+
+
+
+      .post-body p {
+
+        font-size: 13px;
+
+        line-height: 2;
+
+      }
+
+
+
+      .post-body a {
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 10px;
+
+      }
+
+
+    }
+
+
+
+    /* موبایل خیلی کوچک */
+    @media(max-width:360px) {
+
+
+      .hero h1 {
+
+        font-size: 20px;
+
+      }
+
+
+      .post img {
+
+        height: 170px;
+
+      }
+
+
+      .post-body {
+
+        padding: 15px;
+
+      }
+
+      /* دکمه برگشت موبایل */
+
+      .mobile-back {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+
+        width: 35px;
+        height: 35px;
+
+        border: none;
+        border-radius: 50%;
+
+        background: linear-gradient(135deg, #ffb5ce, #ff4f9b);
+
+        color: white;
+
+        font-size: 18px;
+
+        cursor: pointer;
+
+        box-shadow:
+          0 8px 20px rgba(255, 79, 155, .35);
+
+        z-index: 999;
+
+        transition: .3s;
+      }
+
+
+      .mobile-back:hover {
+        transform: translateY(-3px);
+      }
+
+
+
+      /* فقط موبایل */
+
+      @media(max-width:768px) {
+
+        .mobile-back {
+
+          display: flex;
+
+          align-items: center;
+
+          justify-content: center;
+
+        }
+
+      }
+    }
   </style>
 </head>
 
 <body>
-
+  <button class="mobile-back" onclick="history.back()">
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
   <header>
     <div class="logo">
-      <img src="icon2.png" alt="بیوتی شاپ">
+      <img src="image/icon2.png" alt="بیوتی شاپ">
     </div>
   </header>
 
@@ -225,7 +537,7 @@
     <div class="posts">
 
       <article class="post">
-        <img src="ceram.png" alt="کرم پودر مناسب انواع پوست">
+        <img src="image/ceram.png" alt="کرم پودر مناسب انواع پوست">
         <div class="post-body">
           <h2>راهنمای خرید کرم پودر مناسب برای انواع پوست</h2>
           <p>انتخاب کرم پودر درست، پایه یک آرایش بی‌نقص است. این مقاله به شما کمک می‌کند بهترین انتخاب را داشته باشید.
@@ -235,7 +547,7 @@
       </article>
 
       <article class="post">
-        <img src="balm.png" alt="ماندگاری رژ لب">
+        <img src="image/balm.png" alt="ماندگاری رژ لب">
         <div class="post-body">
           <h2>چطور ماندگاری رژ لب را چند برابر کنیم؟</h2>
           <p>با چند تکنیک ساده و حرفه‌ای می‌توانید رژ لب را ساعت‌ها بدون تغییر نگه دارید.</p>
@@ -244,7 +556,7 @@
       </article>
 
       <article class="post">
-        <img src="rotin.png.jpg" alt="عادت روزانه برای پوست لازم">
+        <img src="image/rotin.png.jpg" alt="عادت روزانه برای پوست لازم">
         <div class="post-body">
           <h2>۵ عادت روزانه برای پوست سالم و درخشان</h2>
           <p>این عادت‌های ساده اما مهم، تاثیر فوق‌العاده‌ای روی سلامت و زیبایی پوست دارند.</p>
