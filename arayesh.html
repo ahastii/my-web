@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <title>فروشگاه محصولات</title>
 
@@ -387,10 +388,364 @@
         .add-to-cart {
             margin-top: auto;
         }
+
+        /* ===========================
+      Mobile Responsive
+===========================*/
+        @media (max-width:768px) {
+
+            body {
+                background: #fff;
+                direction: rtl;
+            }
+
+            .search-box {
+
+                width: 90%;
+
+                max-width: 450px;
+
+                margin: 25px auto 0;
+
+                background: white;
+
+                border-radius: 50px;
+
+                padding: 12px 20px;
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 12px;
+
+                box-shadow:
+                    0 10px 30px rgba(0, 0, 0, .08);
+
+            }
+
+
+            .search-box i {
+
+                color: #ff4d8d;
+
+                font-size: 18px;
+
+            }
+
+
+            .search-box input {
+
+                border: none;
+
+                outline: none;
+
+                width: 100%;
+
+                font-family: inherit;
+
+                font-size: 14px;
+
+            }
+
+            /* نوار بالا */
+            .product-toolbar {
+
+                position: sticky;
+                top: 0;
+
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+
+                border-radius: 0;
+
+                background: #fff;
+
+                box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .product-toolbar span {
+                display: none;
+            }
+
+            .sort-btn {
+
+                padding: 9px 18px;
+
+                font-size: 13px;
+
+                border: 1px solid #e5e5e5;
+
+                border-radius: 30px;
+
+                background: #fff;
+
+                flex: none;
+            }
+
+            .sort-btn.active {
+
+                background: #2563eb;
+
+                color: #fff;
+
+                border-color: #2563eb;
+            }
+
+            /* لیست محصولات */
+
+            .products-grid {
+
+                width: 100%;
+
+                padding: 8px 0 90px;
+
+                display: flex;
+                direction: rtl;
+                flex-direction: column;
+
+                gap: 0;
+            }
+
+            /* کارت */
+
+            .product-card {
+
+                display: flex;
+
+                flex-direction: row;
+
+                direction: rtl;
+                align-items: center;
+
+                border-radius: 0;
+
+                box-shadow: none;
+
+                border-bottom: 1px solid #ececec;
+
+                padding: 14px;
+
+                min-height: 165px;
+            }
+
+            .product-card:hover {
+
+                transform: none;
+
+                box-shadow: none;
+            }
+
+            /* عکس */
+
+            .product-image {
+
+                width: 150px;
+
+                height: 150px;
+
+                flex: none;
+            }
+
+            .product-image img {
+
+                width: 95%;
+            }
+
+            .discount-badge {
+
+                top: 8px;
+
+                left: 8px;
+
+                width: 42px;
+
+                height: 42px;
+
+                font-size: 12px;
+            }
+
+            /* مخفی شدن دکمه نمایش بیشتر */
+
+            .image-actions {
+                display: flex;
+                opacity: 1;
+                transform: none;
+                margin: 0;
+                top: 2px;
+                right: 2px;
+            }
+
+            .image-actions {
+                display: none;
+            }
+
+            .view-btn {
+                width: 38px;
+                height: 38px;
+                min-width: 38px;
+                padding: 0;
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+            }
+
+            .view-btn span {
+                display: none;
+            }
+
+            .view-btn img {
+                width: 18px;
+                height: 18px;
+            }
+
+            /* اطلاعات */
+
+            .product-content {
+
+                flex: 1;
+
+                padding: 0 15px;
+
+                align-items: flex-start;
+            }
+
+            .product-title {
+
+                text-align: right;
+
+                font-size: 15px;
+
+                line-height: 28px;
+
+                margin: 0 0 10px;
+            }
+
+            .product-price {
+
+                text-align: right;
+
+                margin-bottom: 10px;
+            }
+
+            .new-price {
+
+                display: block;
+
+                font-size: 18px;
+            }
+
+            .old-price {
+
+                display: block;
+
+                margin-top: 4px;
+
+                font-size: 13px;
+            }
+
+
+
+        }
+
+        /* منوی پایین موبایل */
+        .bottom-mobile-menu {
+            display: none;
+        }
+
+
+        @media(max-width:600px) {
+
+            .bottom-mobile-menu {
+
+                display: flex;
+
+                position: fixed;
+
+                bottom: 0;
+                left: 0;
+
+                width: 100%;
+
+                height: 70px;
+
+                background: rgba(255, 255, 255, .85);
+
+                backdrop-filter: blur(15px);
+
+                z-index: 9999;
+
+                justify-content: space-around;
+
+                align-items: center;
+
+                border-radius: 25px 25px 0 0;
+
+                box-shadow: 0 -5px 20px rgba(0, 0, 0, .12);
+
+            }
+
+
+            .bottom-mobile-menu a {
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 5px;
+
+                font-size: 12px;
+
+                color: #555;
+
+                text-decoration: none;
+
+            }
+
+
+            .bottom-mobile-menu i {
+                font-size: 20px;
+            }
+
+            /* صفحه فعلی */
+            .bottom-mobile-menu a:nth-child(1) {
+
+                color: #E195AB;
+
+            }
+
+
+            /* جا برای آخر محصولات که زیر منو نره */
+            .products-grid {
+
+                padding-bottom: 100px;
+
+            }
+
+        }
     </style>
 </head>
 
 <body>
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input type="text" id="searchInput" placeholder="جستجوی محصول...">
+
+    </div>
 
     <div class="product-toolbar">
 
@@ -414,18 +769,19 @@
 
         <!-- محصول اول -->
 
+
         <div class="product-card" data-price="275000">
 
             <div class="discount-badge">48%</div>
 
             <div class="product-image">
 
-                <img src="rog1.png">
+                <img src="image/rog1.png">
 
                 <div class="image-actions">
                     <a href="tozihat1.html">
                         <button class="view-btn">
-                            <img src="zar.png.png" alt="">
+                            <img src="image/zar.png.png" alt="">
                             <span>نمایش بیشتر</span>
                         </button>
                     </a>
@@ -451,13 +807,12 @@
 
                 </div>
 
-                <button class="add-to-cart">
-                    افزودن به سبد خرید
-                </button>
+
 
             </div>
 
         </div>
+
 
         <!-- محصول دوم -->
 
@@ -467,12 +822,12 @@
 
             <div class="product-image">
 
-                <img src="saye1.png">
+                <img src="image/saye1.png">
 
                 <div class="image-actions">
                     <a href="tozihat.html">
                         <button class="view-btn">
-                            <img src="zar.png.png" alt="">
+                            <img src="image/zar.png.png" alt="">
                             <span>نمایش بیشتر</span>
                         </button>
                     </a>
@@ -497,10 +852,6 @@
 
                 </div>
 
-                <button class="add-to-cart">
-                    افزودن به سبد خرید
-                </button>
-
             </div>
 
         </div>
@@ -512,12 +863,12 @@
 
             <div class="product-image">
 
-                <img src="poder.png">
+                <img src="image/poder.png">
 
                 <div class="image-actions">
                     <a href="tozihat2.html">
                         <button class="view-btn">
-                            <img src="zar.png.png" alt="">
+                            <img src="image/zar.png.png" alt="">
                             <span>نمایش بیشتر</span>
                         </button>
                     </a>
@@ -542,9 +893,6 @@
 
                 </div>
 
-                <button class="add-to-cart">
-                    افزودن به سبد خرید
-                </button>
 
             </div>
 
@@ -556,12 +904,12 @@
             <div class="discount-badge">٪24.1</div>
 
             <div class="product-image">
-                <img src="rem1.png" alt="ریمل">
+                <img src="image/rem1.png" alt="ریمل">
 
                 <div class="image-actions">
                     <a href="tozihat4.html">
                         <button class="view-btn">
-                            <img src="zar.png.png" alt="">
+                            <img src="image/zar.png.png" alt="">
                             <span>نمایش بیشتر</span>
                         </button>
                     </a>
@@ -578,9 +926,7 @@
                     <span class="old-price">1,120,000 تومان</span>
                 </div>
 
-                <button class="add-to-cart">
-                    افزودن به سبد خرید
-                </button>
+
             </div>
 
         </div>
@@ -592,12 +938,12 @@
             <div class="discount-badge">%36.8</div>
 
             <div class="product-image">
-                <img src="ab1.png" alt="ژل لیفت ابرو">
+                <img src="image/ab1.png" alt="ژل لیفت ابرو">
 
                 <div class="image-actions">
                     <a href="tozihat3.html">
                         <button class="view-btn">
-                            <img src="zar.png.png" alt="">
+                            <img src="image/zar.png.png" alt="">
                             <span>نمایش بیشتر</span>
                         </button>
                     </a>
@@ -615,96 +961,154 @@
                     <span class="old-price">680,000 تومان</span>
                 </div>
 
-                <button class="add-to-cart">
-                    افزودن به سبد خرید
-                </button>
 
             </div>
 
         </div>
 
+        <nav class="bottom-mobile-menu">
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>خانه</span>
+            </a>
+
+            <a href="blog.html">
+                <i class="fa-solid fa-newspaper"></i>
+                <span>وبلاگ</span>
+            </a>
+
+            <a href="call.html">
+                <i class="fa-solid fa-phone"></i>
+                <span>تماس با ما</span>
+            </a>
+
+            <a href="saved.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>سبد خرید</span>
+            </a>
+
+        </nav>
+
         <script>
 
-document.addEventListener("DOMContentLoaded", () => {
+            document.addEventListener("DOMContentLoaded", () => {
 
-  const buttons = document.querySelectorAll(".sort-btn");
-  const grid = document.querySelector(".products-grid");
+                const buttons = document.querySelectorAll(".sort-btn");
+                const grid = document.querySelector(".products-grid");
 
-  // ===== SORT =====
-  buttons.forEach(btn => {
+                // ===== SORT =====
+                buttons.forEach(btn => {
 
-    btn.addEventListener("click", () => {
+                    btn.addEventListener("click", () => {
 
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+                        buttons.forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
 
-      let cards = [...document.querySelectorAll(".product-card")];
+                        let cards = [...document.querySelectorAll(".product-card")];
 
-      if (btn.dataset.sort === "cheap") {
-        cards.sort((a, b) =>
-          +a.dataset.price - +b.dataset.price
-        );
-      }
+                        if (btn.dataset.sort === "cheap") {
+                            cards.sort((a, b) =>
+                                +a.dataset.price - +b.dataset.price
+                            );
+                        }
 
-      if (btn.dataset.sort === "expensive") {
-        cards.sort((a, b) =>
-          +b.dataset.price - +a.dataset.price
-        );
-      }
+                        if (btn.dataset.sort === "expensive") {
+                            cards.sort((a, b) =>
+                                +b.dataset.price - +a.dataset.price
+                            );
+                        }
 
-      cards.forEach(card => grid.appendChild(card));
+                        cards.forEach(card => grid.appendChild(card));
 
-    });
+                    });
 
-  });
+                });
 
-  // ===== CART + SAVED =====
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let saved = JSON.parse(localStorage.getItem("savedProducts")) || [];
+                // ===== CART + SAVED =====
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                let saved = JSON.parse(localStorage.getItem("savedProducts")) || [];
 
-  document.querySelectorAll(".add-to-cart").forEach(btn => {
+                document.querySelectorAll(".add-to-cart").forEach(btn => {
 
-    btn.addEventListener("click", function () {
+                    btn.addEventListener("click", function () {
 
-      const card = btn.closest(".product-card");
+                        const card = btn.closest(".product-card");
 
-      const product = {
-        title: card.querySelector(".product-title").innerText,
-        price: card.querySelector(".new-price").innerText,
-        image: card.querySelector("img").src
-      };
+                        const product = {
+                            title: card.querySelector(".product-title").innerText,
+                            price: card.querySelector(".new-price").innerText,
+                            image: card.querySelector("img").src
+                        };
 
-      // CART
-      cart.push(product);
-      localStorage.setItem("cart", JSON.stringify(cart));
+                        // CART
+                        cart.push(product);
+                        localStorage.setItem("cart", JSON.stringify(cart));
 
-      // جلوگیری از تکرار در savedProducts
-      let exists = saved.some(p => p.title === product.title);
+                        // جلوگیری از تکرار در savedProducts
+                        let exists = saved.some(p => p.title === product.title);
 
-      if (!exists) {
-        saved.push(product);
-        localStorage.setItem("savedProducts", JSON.stringify(saved));
-      }
+                        if (!exists) {
+                            saved.push(product);
+                            localStorage.setItem("savedProducts", JSON.stringify(saved));
+                        }
 
-      // TOAST
-      const toast = document.createElement("div");
-      toast.className = "toast";
-      toast.innerText = "✓ محصول ذخیره شد";
+                        // TOAST
+                        const toast = document.createElement("div");
+                        toast.className = "toast";
+                        toast.innerText = "✓ محصول ذخیره شد";
 
-      document.body.appendChild(toast);
+                        document.body.appendChild(toast);
 
-      setTimeout(() => toast.classList.add("show"), 10);
+                        setTimeout(() => toast.classList.add("show"), 10);
 
-      setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => toast.remove(), 300);
-      }, 2500);
+                        setTimeout(() => {
+                            toast.classList.remove("show");
+                            setTimeout(() => toast.remove(), 300);
+                        }, 2500);
 
-    });
+                    });
 
-  });
+                });
 
-});
+            });
+            const searchInput =
+                document.getElementById("searchInput");
+
+
+            searchInput.addEventListener("input", () => {
+
+
+                let value =
+                    searchInput.value.trim();
+
+
+                document.querySelectorAll(".product-card")
+                    .forEach(card => {
+
+
+                        let title =
+                            card.querySelector(".product-title")
+                                .innerText;
+
+
+                        if (title.includes(value)) {
+
+                            card.style.display = "flex";
+
+                        }
+
+                        else {
+
+                            card.style.display = "none";
+
+                        }
+
+
+                    });
+
+
+            });
 
         </script>
 
